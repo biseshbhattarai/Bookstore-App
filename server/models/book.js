@@ -17,13 +17,13 @@ var bookSchema = mongoose.Schema({
     description:{
         type:String
     },
-    publisher:{
+    author:{
         type:String
     },
     pages:{
         type:String
     },
-    buy_url:{
+    buyurl:{
         type:String
     },
     create_date:{
@@ -54,7 +54,7 @@ module.exports.updateBook = function(id, book,options, callback){
         title  : book.title,
         genre : book.genre,
         description : book.description,
-        publisher : book.publisher,
+        author : book.author,
         pages : book.pages,
 
    
