@@ -40,20 +40,22 @@ export default {
             
           
     },
-    mounted(){
-        this.clicked();
-    }, 
-    methods:{
-        clicked:function(){
-            axios.get('http://localhost:3000')
-            .then((response)=>{
-                console.log(response.data);
-                this.books  = response.data.books;
-                
-            })
-        }
+    created(){
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken')
+        axios.get('http://localhost:5000')
+        .then((response)=>{
+            console.log(response.data);
+            this.books  = response.data.books;
+            
+        })
+        .catch(error => {
+            
+            if(error.response.status === 401){
+                this.$router.push('/login')
+            }
+        })
     }
-
+  
 }
 </script>
 

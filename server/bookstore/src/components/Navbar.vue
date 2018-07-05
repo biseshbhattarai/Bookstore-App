@@ -15,6 +15,13 @@
           <li class="nav-item">
             <router-link to="/add"><a class="nav-link">Add</a></router-link>
           </li>
+           <li class="nav-item">
+            <router-link to="/addUser"><a class="nav-link">Register</a></router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/login"><a class="nav-link">Login</a></router-link>
+          </li>
+         
          
         </ul>
         
@@ -31,15 +38,6 @@ import axios from 'axios';
 import Details from './Details';
 export default {
     name:"Navbar",
-    
-    data(){
-        return {
-           id:"",
-           book:""
-            
-        }
-    },
-   
 }
 </script>
 

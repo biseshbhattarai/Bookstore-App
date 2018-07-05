@@ -16,10 +16,7 @@
             <label for="pages">Pages</label>
             <input type="text" id="pages" v-model="pages" class="form-control"/>
         </div>
-         <!-- <div id="form-group">
-            <label for="buyurl">BuyUrl</label>
-            <input type="text" id="buyurl" v-model="buyurl" class="form-control"/>
-        </div> -->
+        
         <button type="Submit" value="Submit" v-on:click="AddBooks" class="btn btn-primary">Submit</button>
 
     </form>
@@ -35,19 +32,18 @@ export default {
             author:'',
             pages:'',
             genre:'',
-            // buyurl:''
+            
             
         }
     },
  
     methods: {
         AddBooks:function(){
-            axios.post('http://localhost:3000/add',{
+            axios.post('http://localhost:5000/add',{
                 title:this.title,
                 author:this.author,
                 pages:this.pages,
                 genre:this.genre,
-                // buyurl:this.buyurl
             })
             .then((response)=>{
                 console.log(response.data);
@@ -55,7 +51,7 @@ export default {
             .catch((error)=>{
                 console.log(error);
             })
-            this.$router.push('/');
+            // this.$router.push('/');
         }
     }
 }

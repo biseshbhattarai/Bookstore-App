@@ -43,7 +43,7 @@ export default {
     },
     methods:{
         editBook:function(){
-            axios.get('http://localhost:3000/'+this.$route.params.id)
+            axios.get('http://localhost:5000/'+this.$route.params.id)
             .then((response)=>{
                 
                 this.title = response.data.title;

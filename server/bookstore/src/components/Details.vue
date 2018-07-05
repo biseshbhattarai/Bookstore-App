@@ -33,8 +33,8 @@ export default {
     methods:{
         oneBook:function(){
             console.log(this.$route.params.id);
-            console.log('http://localhost:3000/'+this.$route.params.id)
-            axios.get('http://localhost:3000/' + this.$route.params.id)
+            console.log('http://localhost:5000/'+this.$route.params.id)
+            axios.get('http://localhost:5000/' + this.$route.params.id)
             .then((response)=>{
                 console.log(response.data.author);
                 this.book = response.data
